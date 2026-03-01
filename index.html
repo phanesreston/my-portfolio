@@ -4,356 +4,283 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shane Preston — phanesreston.com</title>
-  <meta name="description" content="Shane Preston (phanesreston) — Full Stack Developer & UI Designer. Portfolio at phanesreston.com" />
+  <meta name="description" content="Shane Preston (phanesreston) — Full Stack Developer & Photographer. Portfolio at phanesreston.com" />
   <link rel="canonical" href="https://phanesreston.com" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Navigation -->
-  <header class="nav-header" id="nav-header">
-    <nav class="nav-container">
-      <div class="nav-left">
-        <div class="win-dots">
-          <span class="dot dot-r"></span>
-          <span class="dot dot-y"></span>
-          <span class="dot dot-g"></span>
-        </div>
-        <a href="#hero" class="nav-logo">~/phanesreston</a>
-      </div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-mark">SP</span>
+        <span class="logo-name">phanesreston</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
       </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about"><span class="np">cd</span> about</a></li>
-        <li><a href="#skills"><span class="np">ls</span> skills/</a></li>
-        <li><a href="#projects"><span class="np">cat</span> projects.json</a></li>
-        <li><a href="#blog"><span class="np">git</span> log</a></li>
-        <li><a href="#contact" class="nav-cta">./contact.sh</a></li>
-      </ul>
-    </nav>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#creative">Creative</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="container hero-inner">
-      <div class="term-window" id="hero-term">
-        <div class="term-chrome">
-          <div class="win-dots">
-            <span class="dot dot-r"></span>
-            <span class="dot dot-y"></span>
-            <span class="dot dot-g"></span>
-          </div>
-          <span class="term-title">shane@phanesreston: ~</span>
-          <span class="term-chrome-badge">zsh</span>
-        </div>
-        <div class="term-body">
-          <div class="t-line">
-            <span class="t-prompt">shane@phanesreston:~$</span>
-            <span class="t-cmd"> cat about.txt</span>
-          </div>
-          <div class="t-out">
-            <p class="t-comment"># ── phanesreston.com ─────────────────────────────</p>
-            <br />
-            <p><span class="t-key">name</span>      <span class="t-eq">=</span> <span class="t-str">"Shane Preston"</span></p>
-            <p><span class="t-key">role</span>      <span class="t-eq">=</span> <span class="t-str">"Full Stack Developer &amp; UI Designer"</span></p>
-            <p><span class="t-key">location</span>  <span class="t-eq">=</span> <span class="t-str">"San Francisco, CA"</span></p>
-            <p><span class="t-key">status</span>    <span class="t-eq">=</span> <span class="t-green">"available_for_work: true ✓"</span></p>
-            <p><span class="t-key">years_exp</span> <span class="t-eq">=</span> <span class="t-num">5</span></p>
-          </div>
-
-          <div class="t-line t-line-gap">
-            <span class="t-prompt">shane@phanesreston:~$</span>
-            <span class="t-cmd"> ls ./links</span>
-          </div>
-          <div class="t-out t-links-row">
-            <a href="#" class="t-file t-file-dir">github/</a>
-            <a href="#" class="t-file t-file-dir">linkedin/</a>
-            <a href="#" class="t-file t-file-dir">twitter/</a>
-            <a href="#contact" class="t-file">contact.sh</a>
-            <a href="#" class="t-file">resume.pdf</a>
-          </div>
-
-          <div class="t-line t-line-gap">
-            <span class="t-prompt">shane@phanesreston:~$</span>
-            <span class="t-cursor" aria-hidden="true"></span>
-          </div>
-        </div>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-label">
+        <span class="label-dot"></span>
+        Available for work
       </div>
-
-      <div class="hero-aside">
-        <div class="avatar-wrapper">
-          <div class="avatar-placeholder">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="38" r="20" fill="#30363d"/>
-              <ellipse cx="50" cy="82" rx="32" ry="20" fill="#30363d"/>
-            </svg>
-          </div>
-        </div>
-        <a href="#projects" class="btn btn-primary">$ ./view-work.sh</a>
-        <a href="#contact" class="btn btn-outline">$ ./hire-me.sh</a>
-        <p class="cta-hint"><span class="t-comment"># scroll to explore ↓</span></p>
+      <h1 class="hero-title">
+        <span class="ht-line">Shane</span>
+        <span class="ht-line ht-accent">Preston</span>
+      </h1>
+      <p class="hero-sub">
+        Full stack developer &amp; photographer based in San Francisco.
+        I build digital products people love and capture moments worth keeping.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#creative" class="btn btn-ghost">See Creative Work</a>
       </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
     </div>
   </section>
 
   <!-- About -->
   <section class="section" id="about">
     <div class="container">
-      <div class="sec-cmd">
-        <span class="t-prompt">shane@phanesreston:~$</span>
-        <span class="t-cmd"> cat README.md</span>
-      </div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="t-comment">## About Me</p>
-          <p>
-            I'm a full stack developer and UI designer based in San Francisco, CA.
-            I specialize in building exceptional digital experiences — from
-            pixel-perfect interfaces to scalable back-end systems.
-          </p>
-          <p>
-            With 5+ years of experience, I've worked with startups and established
-            companies alike to ship products that are fast, accessible, and
-            delightful to use. I care deeply about the craft.
-          </p>
-          <p>
-            Outside of code, you'll find me hiking trails, reading about systems
-            design, or experimenting with generative art.
-          </p>
-          <a href="#" class="btn btn-outline" download># download resume.pdf</a>
+      <div class="about-wrap">
+        <div class="about-media">
+          <div class="avatar-box">
+            <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="380" fill="#1f1f23"/>
+              <circle cx="150" cy="135" r="66" fill="#27272a"/>
+              <ellipse cx="150" cy="310" rx="105" ry="75" fill="#27272a"/>
+            </svg>
+          </div>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="stat-n">5+</span>
+              <span class="stat-l">years in dev</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-n">40+</span>
+              <span class="stat-l">projects shipped</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-n">∞</span>
+              <span class="stat-l">frames captured</span>
+            </div>
+          </div>
         </div>
-        <div class="about-stats">
-          <div class="stat-card">
-            <span class="stat-num">5+</span>
-            <span class="stat-label">years_experience</span>
+
+        <div class="about-body">
+          <p class="eyebrow">About me</p>
+          <h2 class="section-heading">Developer,<br>creator, explorer.</h2>
+          <p class="body-text">
+            I'm a full stack developer with 5+ years of experience building web applications
+            and digital products. I care deeply about clean code, thoughtful UX, and the
+            intersection of technology and creativity.
+          </p>
+          <p class="body-text">
+            Outside of programming, I'm an avid photographer — drawn to landscapes, street
+            scenes, and quiet everyday moments. I'm also into hiking, systems design,
+            and generative art.
+          </p>
+          <div class="tag-group">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Photography</span>
+            <span class="tag">Generative Art</span>
+            <span class="tag">Hiking</span>
+            <span class="tag">Systems Design</span>
           </div>
-          <div class="stat-card">
-            <span class="stat-num">40+</span>
-            <span class="stat-label">projects_shipped</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">15+</span>
-            <span class="stat-label">happy_clients</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">3</span>
-            <span class="stat-label">open_source_libs</span>
-          </div>
+          <a href="#" class="btn btn-outline">Download Resume</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section class="section" id="skills">
+  <!-- Work / Projects -->
+  <section class="section section-alt" id="work">
     <div class="container">
-      <div class="sec-cmd">
-        <span class="t-prompt">shane@phanesreston:~$</span>
-        <span class="t-cmd"> ls -la ./skills</span>
+      <div class="section-header">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="section-heading">Projects</h2>
       </div>
-      <div class="ls-table">
-        <div class="ls-header">
-          <span>permissions</span>
-          <span>category</span>
-          <span>file</span>
-          <span class="ls-right">proficiency</span>
-        </div>
+      <div class="work-grid">
 
-        <div class="ls-row ls-dir-row">
-          <span class="perm">drwxr-xr-x</span>
-          <span class="ls-cat t-blue">frontend/</span>
-          <span></span><span></span>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">frontend</span>
-          <span class="ls-name">react-nextjs.js</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div><span class="pct">92%</span></div>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">frontend</span>
-          <span class="ls-name">typescript.ts</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div><span class="pct">88%</span></div>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">frontend</span>
-          <span class="ls-name">html-css-tailwind.css</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div><span class="pct">95%</span></div>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">frontend</span>
-          <span class="ls-name">vue.js</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div><span class="pct">75%</span></div>
-        </div>
+        <article class="work-card">
+          <div class="work-img wi-1">
+            <span class="work-tag">Full Stack</span>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">TaskFlow</h3>
+            <p class="work-desc">Project management with real-time collaboration, Kanban boards and team analytics. 2,000+ active users.</p>
+            <div class="work-stack">
+              <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+            </div>
+            <div class="work-links">
+              <a href="#" class="wl-primary">Live Demo →</a>
+              <a href="#" class="wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="ls-row ls-dir-row">
-          <span class="perm">drwxr-xr-x</span>
-          <span class="ls-cat t-green">backend/</span>
-          <span></span><span></span>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">backend</span>
-          <span class="ls-name">nodejs-express.js</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div><span class="pct">90%</span></div>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">backend</span>
-          <span class="ls-name">python-fastapi.py</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div><span class="pct">80%</span></div>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">backend</span>
-          <span class="ls-name">postgresql-mongodb.sql</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div><span class="pct">85%</span></div>
-        </div>
+        <article class="work-card">
+          <div class="work-img wi-2">
+            <span class="work-tag">E-Commerce</span>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">Storefront</h3>
+            <p class="work-desc">Headless e-commerce platform with custom CMS and a 98/100 Lighthouse performance score.</p>
+            <div class="work-stack">
+              <span>Next.js</span><span>Stripe</span><span>Tailwind</span>
+            </div>
+            <div class="work-links">
+              <a href="#" class="wl-primary">Live Demo →</a>
+              <a href="#" class="wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="ls-row ls-dir-row">
-          <span class="perm">drwxr-xr-x</span>
-          <span class="ls-cat t-yellow">devops/</span>
-          <span></span><span></span>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">devops</span>
-          <span class="ls-name">aws-gcp.yml</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div><span class="pct">78%</span></div>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">devops</span>
-          <span class="ls-name">docker-kubernetes.sh</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div><span class="pct">72%</span></div>
-        </div>
-        <div class="ls-row">
-          <span class="perm">-rw-r--r--</span>
-          <span class="ls-cat t-muted">devops</span>
-          <span class="ls-name">git-cicd.sh</span>
-          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:93%"></div></div><span class="pct">93%</span></div>
-        </div>
+        <article class="work-card">
+          <div class="work-img wi-3">
+            <span class="work-tag">Analytics</span>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">Insight</h3>
+            <p class="work-desc">Real-time analytics dashboard with AI-powered trend detection and customisable reporting.</p>
+            <div class="work-stack">
+              <span>Python</span><span>FastAPI</span><span>React</span>
+            </div>
+            <div class="work-links">
+              <a href="#" class="wl-primary">Live Demo →</a>
+              <a href="#" class="wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-img wi-4">
+            <span class="work-tag">Messaging</span>
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">ChatSpace</h3>
+            <p class="work-desc">Slack-style messaging app with E2E encryption, built to handle 10,000+ concurrent users.</p>
+            <div class="work-stack">
+              <span>Vue.js</span><span>Firebase</span><span>WebSockets</span>
+            </div>
+            <div class="work-links">
+              <a href="#" class="wl-primary">Live Demo →</a>
+              <a href="#" class="wl-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="section" id="projects">
+  <!-- Creative / Photography -->
+  <section class="section" id="creative">
     <div class="container">
-      <div class="sec-cmd">
-        <span class="t-prompt">shane@phanesreston:~$</span>
-        <span class="t-cmd"> cat projects.json | jq '.'</span>
+      <div class="section-header">
+        <p class="eyebrow">Beyond the code</p>
+        <h2 class="section-heading">Creative Work</h2>
+        <p class="section-sub">Photography, generative art, and other creative explorations.</p>
       </div>
-      <div class="projects-json">
-        <p class="json-bracket">[</p>
-
-        <div class="project-card">
-          <p class="json-brace">&nbsp;&nbsp;{</p>
-          <div class="project-body">
-            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"TaskFlow"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Project management with real-time collaboration, Kanban boards &amp; team analytics"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"React"</span><span class="t-comma">,</span> <span class="t-str">"Node.js"</span><span class="t-comma">,</span> <span class="t-str">"PostgreSQL"</span>]<span class="t-comma">,</span></p>
-            <p><span class="t-key">"users"</span><span class="t-eq">:</span> <span class="t-num">2000</span><span class="t-comma">,</span></p>
-            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
-          </div>
-          <p class="json-brace">&nbsp;&nbsp;},</p>
+      <div class="photo-grid">
+        <div class="photo-cell pc-wide pi-1">
+          <div class="photo-label">Landscapes</div>
         </div>
-
-        <div class="project-card">
-          <p class="json-brace">&nbsp;&nbsp;{</p>
-          <div class="project-body">
-            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"Storefront"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Headless e-commerce with custom CMS &amp; 98/100 Lighthouse performance score"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"Next.js"</span><span class="t-comma">,</span> <span class="t-str">"Stripe"</span><span class="t-comma">,</span> <span class="t-str">"Tailwind"</span>]<span class="t-comma">,</span></p>
-            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
-          </div>
-          <p class="json-brace">&nbsp;&nbsp;},</p>
+        <div class="photo-cell pi-2">
+          <div class="photo-label">Street</div>
         </div>
-
-        <div class="project-card">
-          <p class="json-brace">&nbsp;&nbsp;{</p>
-          <div class="project-body">
-            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"Insight"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Real-time analytics dashboard with AI-powered trend detection"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"Python"</span><span class="t-comma">,</span> <span class="t-str">"FastAPI"</span><span class="t-comma">,</span> <span class="t-str">"React"</span>]<span class="t-comma">,</span></p>
-            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
-          </div>
-          <p class="json-brace">&nbsp;&nbsp;},</p>
+        <div class="photo-cell pi-3">
+          <div class="photo-label">Architecture</div>
         </div>
-
-        <div class="project-card">
-          <p class="json-brace">&nbsp;&nbsp;{</p>
-          <div class="project-body">
-            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"ChatSpace"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Slack-style messaging with E2E encryption, built for 10k+ concurrent users"</span><span class="t-comma">,</span></p>
-            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"Vue.js"</span><span class="t-comma">,</span> <span class="t-str">"Firebase"</span><span class="t-comma">,</span> <span class="t-str">"WebSockets"</span>]<span class="t-comma">,</span></p>
-            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
-          </div>
-          <p class="json-brace">&nbsp;&nbsp;}</p>
+        <div class="photo-cell pi-4">
+          <div class="photo-label">Portraits</div>
         </div>
-
-        <p class="json-bracket">]</p>
+        <div class="photo-cell pc-wide pi-5">
+          <div class="photo-label">Nature</div>
+        </div>
+        <div class="photo-cell pi-6">
+          <div class="photo-label">Generative</div>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="#" class="btn btn-outline">View Full Gallery</a>
       </div>
     </div>
   </section>
 
-  <!-- Blog -->
-  <section class="section" id="blog">
+  <!-- Writing / Blog -->
+  <section class="section section-alt" id="writing">
     <div class="container">
-      <div class="sec-cmd">
-        <span class="t-prompt">shane@phanesreston:~$</span>
-        <span class="t-cmd"> git log --oneline --decorate blog/</span>
+      <div class="section-header">
+        <p class="eyebrow">Thoughts & writing</p>
+        <h2 class="section-heading">Articles</h2>
       </div>
-      <div class="git-log">
-        <div class="git-entry">
-          <div class="git-top">
-            <span class="git-hash">a3f8c21</span>
-            <span class="git-ref t-blue">(HEAD -&gt; main)</span>
-            <span class="git-subject">Why I Switched from REST to GraphQL (and Back)</span>
+      <div class="writing-list">
+
+        <article class="writing-item">
+          <div class="writing-meta">
+            <span class="writing-date">Feb 20, 2026</span>
+            <span class="writing-cat">Architecture</span>
           </div>
-          <div class="git-meta">
-            <span class="git-date t-muted">2026-02-20</span>
-            <span class="git-tag t-yellow">Architecture</span>
-            <a href="#" class="t-link">read →</a>
+          <div class="writing-body">
+            <h3 class="writing-title">Why I Switched from REST to GraphQL (and Back)</h3>
+            <p class="writing-desc">A practical look at the trade-offs between REST and GraphQL after running both in production for two years.</p>
           </div>
-          <p class="git-body t-muted">A practical look at the trade-offs between REST and GraphQL after running both in production for two years.</p>
-        </div>
-        <div class="git-entry">
-          <div class="git-top">
-            <span class="git-hash">b7d1e09</span>
-            <span class="git-ref t-green">(origin/main)</span>
-            <span class="git-subject">The Art of the Code Review: What 500+ Reviews Taught Me</span>
+          <a href="#" class="writing-link">Read →</a>
+        </article>
+
+        <article class="writing-item">
+          <div class="writing-meta">
+            <span class="writing-date">Jan 15, 2026</span>
+            <span class="writing-cat">Engineering</span>
           </div>
-          <div class="git-meta">
-            <span class="git-date t-muted">2026-01-15</span>
-            <span class="git-tag t-yellow">Engineering Culture</span>
-            <a href="#" class="t-link">read →</a>
+          <div class="writing-body">
+            <h3 class="writing-title">The Art of the Code Review: What 500+ Reviews Taught Me</h3>
+            <p class="writing-desc">Hard-won lessons from reviewing thousands of lines — what makes a review genuinely useful vs. just noise.</p>
           </div>
-          <p class="git-body t-muted">Hard-won lessons from reviewing thousands of lines — what makes a review genuinely useful vs. just noise.</p>
-        </div>
-        <div class="git-entry">
-          <div class="git-top">
-            <span class="git-hash">c2a4f77</span>
-            <span class="git-subject">Building a Design System from Scratch in 30 Days</span>
+          <a href="#" class="writing-link">Read →</a>
+        </article>
+
+        <article class="writing-item">
+          <div class="writing-meta">
+            <span class="writing-date">Dec 3, 2025</span>
+            <span class="writing-cat">Design Systems</span>
           </div>
-          <div class="git-meta">
-            <span class="git-date t-muted">2025-12-03</span>
-            <span class="git-tag t-yellow">Design Systems</span>
-            <a href="#" class="t-link">read →</a>
+          <div class="writing-body">
+            <h3 class="writing-title">Building a Design System from Scratch in 30 Days</h3>
+            <p class="writing-desc">A step-by-step diary of building a component library for a Series A startup with a team of two.</p>
           </div>
-          <p class="git-body t-muted">A step-by-step diary of building a component library for a Series A startup with a team of two.</p>
-        </div>
+          <a href="#" class="writing-link">Read →</a>
+        </article>
+
       </div>
-      <div class="sec-cmd" style="margin-top:2rem">
-        <span class="t-prompt">shane@phanesreston:~$</span>
-        <span class="t-cmd"> <a href="#" class="t-link"># view all articles →</a></span>
+      <div class="section-cta">
+        <a href="#" class="btn btn-outline">View All Articles</a>
       </div>
     </div>
   </section>
@@ -361,71 +288,56 @@
   <!-- Contact -->
   <section class="section" id="contact">
     <div class="container">
-      <div class="sec-cmd">
-        <span class="t-prompt">shane@phanesreston:~$</span>
-        <span class="t-cmd"> ./contact.sh --interactive</span>
-      </div>
-      <div class="contact-layout">
-        <form class="contact-form term-window" id="contact-form" novalidate>
-          <div class="term-chrome">
-            <div class="win-dots">
-              <span class="dot dot-r"></span>
-              <span class="dot dot-y"></span>
-              <span class="dot dot-g"></span>
-            </div>
-            <span class="term-title">contact.sh — interactive mode</span>
-          </div>
-          <div class="term-body form-body">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name"><span class="t-prompt-sm">$</span> name=</label>
-                <input type="text" id="name" name="name" placeholder='"Jane Smith"' required />
-              </div>
-              <div class="form-group">
-                <label for="email"><span class="t-prompt-sm">$</span> email=</label>
-                <input type="email" id="email" name="email" placeholder='"jane@example.com"' required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="subject"><span class="t-prompt-sm">$</span> subject=</label>
-              <input type="text" id="subject" name="subject" placeholder='"Project Inquiry"' />
-            </div>
-            <div class="form-group">
-              <label for="message"><span class="t-prompt-sm">$</span> message=</label>
-              <textarea id="message" name="message" rows="5" placeholder='"Tell me about your project..."' required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">$ send --message ↵</button>
-            <p class="form-status" id="form-status"></p>
-          </div>
-        </form>
-
+      <div class="contact-wrap">
         <div class="contact-info">
-          <p class="t-comment"># Direct contact info</p>
-          <div class="cinfo-row">
-            <span class="t-key">email</span><span class="t-eq">     = </span><a href="mailto:shane@phanesreston.com" class="t-str t-link">"shane@phanesreston.com"</a>
-          </div>
-          <div class="cinfo-row">
-            <span class="t-key">site</span><span class="t-eq">      = </span><a href="https://phanesreston.com" class="t-blue t-link">"phanesreston.com"</a>
-          </div>
-          <div class="cinfo-row">
-            <span class="t-key">location</span><span class="t-eq">  = </span><span class="t-str">"San Francisco, CA"</span>
-          </div>
-          <div class="cinfo-row">
-            <span class="t-key">response</span><span class="t-eq">  = </span><span class="t-str">"&lt; 24 hours"</span>
-          </div>
-          <div class="cinfo-row">
-            <span class="t-key">open_to</span><span class="t-eq">   = </span><span class="t-green">"freelance | full-time"</span>
-          </div>
-          <div class="cinfo-row" style="margin-top:1.5rem">
-            <span class="t-comment"># Social</span>
-          </div>
-          <div class="cinfo-row">
-            <span class="t-key">github</span><span class="t-eq">    = </span><a href="https://github.com/phanesreston" class="t-blue t-link">"@phanesreston"</a>
-          </div>
-          <div class="cinfo-row">
-            <span class="t-key">linkedin</span><span class="t-eq">  = </span><a href="#" class="t-blue t-link">"in/phanesreston"</a>
-          </div>
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="section-heading">Let's Connect</h2>
+          <p class="body-text">
+            Whether you have a project in mind, want to collaborate,
+            or just want to say hello — my inbox is always open.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <span class="cl-label">Email</span>
+              <a href="mailto:shane@phanesreston.com" class="cl-val">shane@phanesreston.com</a>
+            </li>
+            <li>
+              <span class="cl-label">GitHub</span>
+              <a href="https://github.com/phanesreston" class="cl-val">@phanesreston</a>
+            </li>
+            <li>
+              <span class="cl-label">LinkedIn</span>
+              <a href="#" class="cl-val">in/phanesreston</a>
+            </li>
+            <li>
+              <span class="cl-label">Site</span>
+              <a href="https://phanesreston.com" class="cl-val">phanesreston.com</a>
+            </li>
+          </ul>
         </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-status" id="form-status"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -433,13 +345,13 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-copy"><span class="t-comment"># </span>© 2026 Shane Preston — phanesreston.com. Built with ♥ &amp; caffeine.</p>
-      <div class="footer-links">
-        <a href="#hero">~ home</a>
-        <a href="#about">about</a>
-        <a href="#projects">projects</a>
-        <a href="#contact">contact</a>
-      </div>
+      <p class="footer-copy">© 2026 Shane Preston — phanesreston.com</p>
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#creative">Creative</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </footer>
 
