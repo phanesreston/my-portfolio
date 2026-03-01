@@ -1,89 +1,99 @@
 /* ============================================================
-   Navigation — scroll shadow + mobile toggle
+   Navigation — scroll border + mobile toggle
    ============================================================ */
 const navHeader = document.getElementById('nav-header');
 const navToggle = document.getElementById('nav-toggle');
 const navLinks  = document.getElementById('nav-links');
 
-window.addEventListener('scroll', () => {
-  navHeader.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
-
+// Nav already has a border; nothing extra needed on scroll for terminal style.
+// Keep toggle for mobile.
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
-
-// Close mobile menu when a link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
 /* ============================================================
-   Smooth active nav link highlighting
+   Active nav link on scroll
    ============================================================ */
-const sections = document.querySelectorAll('section[id]');
+const sections   = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
 function setActiveLink() {
-  const scrollY = window.scrollY + 100;
-  sections.forEach(section => {
-    const top    = section.offsetTop;
-    const height = section.offsetHeight;
-    const id     = section.getAttribute('id');
-    const anchor = document.querySelector(`.nav-links a[href="#${id}"]`);
+  const y = window.scrollY + 80;
+  sections.forEach(sec => {
+    const anchor = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
     if (!anchor) return;
-    if (scrollY >= top && scrollY < top + height) {
-      navAnchors.forEach(a => a.classList.remove('active'));
-      anchor.classList.add('active');
-    }
+    const active = y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight;
+    anchor.style.color = active ? 'var(--bright)' : '';
   });
 }
 window.addEventListener('scroll', setActiveLink, { passive: true });
 setActiveLink();
 
 /* ============================================================
-   Fade-in on scroll (IntersectionObserver)
+   Fade-in on scroll
    ============================================================ */
-const fadeTargets = document.querySelectorAll(
-  '.stat-card, .skill-group, .project-card, .blog-card, .contact-form, .contact-info, .about-text, .about-stats'
+const fadeEls = document.querySelectorAll(
+  '.stat-card, .ls-row, .project-card, .git-entry, .about-text, .about-stats, .contact-info'
 );
+fadeEls.forEach(el => el.classList.add('fade-in'));
 
-fadeTargets.forEach(el => el.classList.add('fade-in'));
-
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      fadeObserver.unobserve(entry.target);
+const fadeObs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      // Stagger siblings slightly
+      setTimeout(() => e.target.classList.add('visible'), i * 40);
+      fadeObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.08 });
 
-fadeTargets.forEach(el => fadeObserver.observe(el));
+fadeEls.forEach(el => fadeObs.observe(el));
 
 /* ============================================================
    Skill bar animation
    ============================================================ */
-const skillBars = document.querySelectorAll('.skill-fill');
-
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animated');
-      barObserver.unobserve(entry.target);
+const bars = document.querySelectorAll('.skill-fill');
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('animated');
+      barObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.3 });
-
-skillBars.forEach(bar => barObserver.observe(bar));
+}, { threshold: 0.4 });
+bars.forEach(b => barObs.observe(b));
 
 /* ============================================================
-   Contact form (demo — logs to console; wire up to your backend)
+   Hero terminal — type-in effect
    ============================================================ */
-const contactForm = document.getElementById('contact-form');
-const formStatus  = document.getElementById('form-status');
+(function heroType() {
+  const term = document.getElementById('hero-term');
+  if (!term) return;
 
-contactForm.addEventListener('submit', async (e) => {
+  // Lines are already rendered in HTML; we reveal them progressively.
+  const lines = term.querySelectorAll('.t-line, .t-out');
+  lines.forEach(l => { l.style.opacity = '0'; });
+
+  let delay = 300;
+  lines.forEach(line => {
+    setTimeout(() => {
+      line.style.transition = 'opacity 0.2s ease';
+      line.style.opacity    = '1';
+    }, delay);
+    delay += line.classList.contains('t-out') ? 250 : 120;
+  });
+})();
+
+/* ============================================================
+   Contact form
+   ============================================================ */
+const form       = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+form.addEventListener('submit', async e => {
   e.preventDefault();
 
   const name    = document.getElementById('name').value.trim();
@@ -91,72 +101,22 @@ contactForm.addEventListener('submit', async (e) => {
   const message = document.getElementById('message').value.trim();
 
   if (!name || !email || !message) {
-    formStatus.textContent = 'Please fill in all required fields.';
-    formStatus.style.color = '#dc2626';
+    formStatus.style.color = 'var(--red)';
+    formStatus.textContent = '> Error: name, email, and message are required.';
     return;
   }
 
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled     = true;
+  btn.textContent  = '$ sending...';
+  formStatus.style.color  = 'var(--muted)';
+  formStatus.textContent  = '> Connecting to mail server...';
 
-  // Simulate async send (replace with real fetch/API call)
-  await new Promise(resolve => setTimeout(resolve, 1200));
+  await new Promise(r => setTimeout(r, 1200));
 
-  formStatus.textContent = 'Message sent! I\'ll be in touch soon.';
-  formStatus.style.color = '#16a34a';
-  contactForm.reset();
-  submitBtn.disabled = false;
-  submitBtn.textContent = 'Send Message';
+  formStatus.style.color  = 'var(--green)';
+  formStatus.textContent  = '> ✓ Message sent! I\'ll reply within 24 hours.';
+  form.reset();
+  btn.disabled    = false;
+  btn.textContent = '$ send --message ↵';
 });
-
-/* ============================================================
-   Typed/rotating role text in hero (optional flair)
-   ============================================================ */
-const roles = [
-  'Full Stack Developer & UI Designer',
-  'React & Node.js Enthusiast',
-  'Open Source Contributor',
-  'Problem Solver',
-];
-const roleEl = document.querySelector('.hero-role');
-
-if (roleEl) {
-  let roleIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
-  let pause = false;
-
-  function typeRole() {
-    if (pause) return;
-
-    const current = roles[roleIndex];
-    const display = deleting
-      ? current.substring(0, charIndex--)
-      : current.substring(0, charIndex++);
-
-    // Preserve the divider span
-    const divider = roleEl.querySelector('.role-divider');
-    roleEl.textContent = display;
-    if (divider && !deleting && charIndex > current.indexOf('&') + 1) {
-      // re-inject span
-    }
-
-    if (!deleting && charIndex > current.length) {
-      pause = true;
-      setTimeout(() => { deleting = true; pause = false; }, 2200);
-    } else if (deleting && charIndex < 0) {
-      deleting = false;
-      charIndex = 0;
-      roleIndex = (roleIndex + 1) % roles.length;
-      pause = true;
-      setTimeout(() => { pause = false; }, 400);
-    }
-
-    const speed = deleting ? 40 : 65;
-    setTimeout(typeRole, speed);
-  }
-
-  // Start after a short delay
-  setTimeout(typeRole, 1000);
-}

@@ -7,64 +7,93 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Navigation -->
   <header class="nav-header" id="nav-header">
     <nav class="nav-container">
-      <a href="#hero" class="nav-logo">AM</a>
+      <div class="nav-left">
+        <div class="win-dots">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+        </div>
+        <a href="#hero" class="nav-logo">~/alex-morgan</a>
+      </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#about"><span class="np">cd</span> about</a></li>
+        <li><a href="#skills"><span class="np">ls</span> skills/</a></li>
+        <li><a href="#projects"><span class="np">cat</span> projects.json</a></li>
+        <li><a href="#blog"><span class="np">git</span> log</a></li>
+        <li><a href="#contact" class="nav-cta">./contact.sh</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero-content">
-      <p class="hero-greeting">Hello, I'm</p>
-      <h1 class="hero-name">Alex Morgan</h1>
-      <h2 class="hero-role">Full Stack Developer <span class="role-divider">&</span> UI Designer</h2>
-      <p class="hero-tagline">
-        I craft clean, performant web experiences that people love to use.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
-      </div>
-      <div class="hero-socials">
-        <a href="#" aria-label="GitHub" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="#" aria-label="Twitter / X" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="avatar-wrapper">
-        <div class="avatar-placeholder">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="38" r="20" fill="#d1d5db"/>
-            <ellipse cx="50" cy="82" rx="32" ry="20" fill="#d1d5db"/>
-          </svg>
+    <div class="container hero-inner">
+      <div class="term-window" id="hero-term">
+        <div class="term-chrome">
+          <div class="win-dots">
+            <span class="dot dot-r"></span>
+            <span class="dot dot-y"></span>
+            <span class="dot dot-g"></span>
+          </div>
+          <span class="term-title">alex@portfolio: ~</span>
+          <span class="term-chrome-badge">zsh</span>
+        </div>
+        <div class="term-body">
+          <div class="t-line">
+            <span class="t-prompt">alex@portfolio:~$</span>
+            <span class="t-cmd"> cat about.txt</span>
+          </div>
+          <div class="t-out">
+            <p class="t-comment"># ── Welcome to my portfolio ─────────────────────</p>
+            <br />
+            <p><span class="t-key">name</span>      <span class="t-eq">=</span> <span class="t-str">"Alex Morgan"</span></p>
+            <p><span class="t-key">role</span>      <span class="t-eq">=</span> <span class="t-str">"Full Stack Developer &amp; UI Designer"</span></p>
+            <p><span class="t-key">location</span>  <span class="t-eq">=</span> <span class="t-str">"San Francisco, CA"</span></p>
+            <p><span class="t-key">status</span>    <span class="t-eq">=</span> <span class="t-green">"available_for_work: true ✓"</span></p>
+            <p><span class="t-key">years_exp</span> <span class="t-eq">=</span> <span class="t-num">5</span></p>
+          </div>
+
+          <div class="t-line t-line-gap">
+            <span class="t-prompt">alex@portfolio:~$</span>
+            <span class="t-cmd"> ls ./links</span>
+          </div>
+          <div class="t-out t-links-row">
+            <a href="#" class="t-file t-file-dir">github/</a>
+            <a href="#" class="t-file t-file-dir">linkedin/</a>
+            <a href="#" class="t-file t-file-dir">twitter/</a>
+            <a href="#contact" class="t-file">contact.sh</a>
+            <a href="#" class="t-file">resume.pdf</a>
+          </div>
+
+          <div class="t-line t-line-gap">
+            <span class="t-prompt">alex@portfolio:~$</span>
+            <span class="t-cursor" aria-hidden="true"></span>
+          </div>
         </div>
       </div>
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Available for work
+
+      <div class="hero-aside">
+        <div class="avatar-wrapper">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="38" r="20" fill="#30363d"/>
+              <ellipse cx="50" cy="82" rx="32" ry="20" fill="#30363d"/>
+            </svg>
+          </div>
+        </div>
+        <a href="#projects" class="btn btn-primary">$ ./view-work.sh</a>
+        <a href="#contact" class="btn btn-outline">$ ./hire-me.sh</a>
+        <p class="cta-hint"><span class="t-comment"># scroll to explore ↓</span></p>
       </div>
     </div>
   </section>
@@ -72,42 +101,45 @@
   <!-- About -->
   <section class="section" id="about">
     <div class="container">
-      <div class="section-label">About Me</div>
+      <div class="sec-cmd">
+        <span class="t-prompt">alex@portfolio:~$</span>
+        <span class="t-cmd"> cat README.md</span>
+      </div>
       <div class="about-grid">
         <div class="about-text">
-          <h2 class="section-title">Building things for the web</h2>
+          <p class="t-comment">## About Me</p>
           <p>
-            I'm a full stack developer and UI designer based in San Francisco, CA. I
-            specialize in building exceptional digital experiences — from pixel-perfect
-            interfaces to scalable back-end systems.
+            I'm a full stack developer and UI designer based in San Francisco, CA.
+            I specialize in building exceptional digital experiences — from
+            pixel-perfect interfaces to scalable back-end systems.
           </p>
           <p>
             With 5+ years of experience, I've worked with startups and established
-            companies alike to ship products that are fast, accessible, and delightful
-            to use. I care deeply about the craft and enjoy every step of the process.
+            companies alike to ship products that are fast, accessible, and
+            delightful to use. I care deeply about the craft.
           </p>
           <p>
-            Outside of code, you'll find me hiking trails, reading about systems design,
-            or experimenting with generative art.
+            Outside of code, you'll find me hiking trails, reading about systems
+            design, or experimenting with generative art.
           </p>
-          <a href="#" class="btn btn-outline" download>Download CV</a>
+          <a href="#" class="btn btn-outline" download># download resume.pdf</a>
         </div>
         <div class="about-stats">
           <div class="stat-card">
-            <span class="stat-number">5+</span>
-            <span class="stat-label">Years Experience</span>
+            <span class="stat-num">5+</span>
+            <span class="stat-label">years_experience</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number">40+</span>
-            <span class="stat-label">Projects Shipped</span>
+            <span class="stat-num">40+</span>
+            <span class="stat-label">projects_shipped</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Happy Clients</span>
+            <span class="stat-num">15+</span>
+            <span class="stat-label">happy_clients</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number">3</span>
-            <span class="stat-label">Open Source Libs</span>
+            <span class="stat-num">3</span>
+            <span class="stat-label">open_source_libs</span>
           </div>
         </div>
       </div>
@@ -115,92 +147,97 @@
   </section>
 
   <!-- Skills -->
-  <section class="section section-alt" id="skills">
+  <section class="section" id="skills">
     <div class="container">
-      <div class="section-label">Expertise</div>
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills-grid">
-
-        <div class="skill-group">
-          <h3 class="skill-group-title">Frontend</h3>
-          <ul class="skill-list">
-            <li class="skill-item">
-              <span class="skill-name">React / Next.js</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">TypeScript</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">HTML / CSS / Tailwind</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">Vue.js</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
-            </li>
-          </ul>
+      <div class="sec-cmd">
+        <span class="t-prompt">alex@portfolio:~$</span>
+        <span class="t-cmd"> ls -la ./skills</span>
+      </div>
+      <div class="ls-table">
+        <div class="ls-header">
+          <span>permissions</span>
+          <span>category</span>
+          <span>file</span>
+          <span class="ls-right">proficiency</span>
         </div>
 
-        <div class="skill-group">
-          <h3 class="skill-group-title">Backend</h3>
-          <ul class="skill-list">
-            <li class="skill-item">
-              <span class="skill-name">Node.js / Express</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">Python / FastAPI</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">PostgreSQL / MongoDB</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">GraphQL</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
-            </li>
-          </ul>
+        <div class="ls-row ls-dir-row">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="ls-cat t-blue">frontend/</span>
+          <span></span><span></span>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">frontend</span>
+          <span class="ls-name">react-nextjs.js</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div><span class="pct">92%</span></div>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">frontend</span>
+          <span class="ls-name">typescript.ts</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div><span class="pct">88%</span></div>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">frontend</span>
+          <span class="ls-name">html-css-tailwind.css</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div><span class="pct">95%</span></div>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">frontend</span>
+          <span class="ls-name">vue.js</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div><span class="pct">75%</span></div>
         </div>
 
-        <div class="skill-group">
-          <h3 class="skill-group-title">Tools & Cloud</h3>
-          <ul class="skill-list">
-            <li class="skill-item">
-              <span class="skill-name">AWS / GCP</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">Docker / Kubernetes</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">Git / CI/CD</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:93%"></div></div>
-            </li>
-            <li class="skill-item">
-              <span class="skill-name">Figma / Design Systems</span>
-              <div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div>
-            </li>
-          </ul>
+        <div class="ls-row ls-dir-row">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="ls-cat t-green">backend/</span>
+          <span></span><span></span>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">backend</span>
+          <span class="ls-name">nodejs-express.js</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div><span class="pct">90%</span></div>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">backend</span>
+          <span class="ls-name">python-fastapi.py</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div><span class="pct">80%</span></div>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">backend</span>
+          <span class="ls-name">postgresql-mongodb.sql</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div><span class="pct">85%</span></div>
         </div>
 
-        <div class="skill-group">
-          <h3 class="skill-group-title">Soft Skills</h3>
-          <div class="tag-cloud">
-            <span class="tag">Team Leadership</span>
-            <span class="tag">Agile / Scrum</span>
-            <span class="tag">Code Review</span>
-            <span class="tag">Mentorship</span>
-            <span class="tag">Technical Writing</span>
-            <span class="tag">Client Communication</span>
-            <span class="tag">Problem Solving</span>
-            <span class="tag">System Design</span>
-          </div>
+        <div class="ls-row ls-dir-row">
+          <span class="perm">drwxr-xr-x</span>
+          <span class="ls-cat t-yellow">devops/</span>
+          <span></span><span></span>
         </div>
-
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">devops</span>
+          <span class="ls-name">aws-gcp.yml</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div><span class="pct">78%</span></div>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">devops</span>
+          <span class="ls-name">docker-kubernetes.sh</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div><span class="pct">72%</span></div>
+        </div>
+        <div class="ls-row">
+          <span class="perm">-rw-r--r--</span>
+          <span class="ls-cat t-muted">devops</span>
+          <span class="ls-name">git-cicd.sh</span>
+          <div class="ls-right"><div class="skill-bar"><div class="skill-fill" style="--w:93%"></div></div><span class="pct">93%</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -208,149 +245,113 @@
   <!-- Projects -->
   <section class="section" id="projects">
     <div class="container">
-      <div class="section-label">Work</div>
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
+      <div class="sec-cmd">
+        <span class="t-prompt">alex@portfolio:~$</span>
+        <span class="t-cmd"> cat projects.json | jq '.'</span>
+      </div>
+      <div class="projects-json">
+        <p class="json-bracket">[</p>
 
-        <article class="project-card project-card--featured">
-          <div class="project-image project-image--1"></div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag">React</span>
-              <span class="project-tag">Node.js</span>
-              <span class="project-tag">PostgreSQL</span>
-            </div>
-            <h3 class="project-title">TaskFlow — Project Management App</h3>
-            <p class="project-desc">
-              A full-featured project management platform with real-time collaboration,
-              Kanban boards, time tracking, and team analytics. Used by 2,000+ teams.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link">Live Demo →</a>
-              <a href="#" class="project-link project-link--secondary">GitHub</a>
-            </div>
+        <div class="project-card">
+          <p class="json-brace">&nbsp;&nbsp;{</p>
+          <div class="project-body">
+            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"TaskFlow"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Project management with real-time collaboration, Kanban boards &amp; team analytics"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"React"</span><span class="t-comma">,</span> <span class="t-str">"Node.js"</span><span class="t-comma">,</span> <span class="t-str">"PostgreSQL"</span>]<span class="t-comma">,</span></p>
+            <p><span class="t-key">"users"</span><span class="t-eq">:</span> <span class="t-num">2000</span><span class="t-comma">,</span></p>
+            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
           </div>
-        </article>
+          <p class="json-brace">&nbsp;&nbsp;},</p>
+        </div>
 
-        <article class="project-card">
-          <div class="project-image project-image--2"></div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag">Next.js</span>
-              <span class="project-tag">Stripe</span>
-              <span class="project-tag">Tailwind</span>
-            </div>
-            <h3 class="project-title">Storefront — E-Commerce Platform</h3>
-            <p class="project-desc">
-              Headless e-commerce solution with custom CMS, dynamic product pages,
-              and a 98/100 Lighthouse performance score.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link">Live Demo →</a>
-              <a href="#" class="project-link project-link--secondary">GitHub</a>
-            </div>
+        <div class="project-card">
+          <p class="json-brace">&nbsp;&nbsp;{</p>
+          <div class="project-body">
+            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"Storefront"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Headless e-commerce with custom CMS &amp; 98/100 Lighthouse performance score"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"Next.js"</span><span class="t-comma">,</span> <span class="t-str">"Stripe"</span><span class="t-comma">,</span> <span class="t-str">"Tailwind"</span>]<span class="t-comma">,</span></p>
+            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
           </div>
-        </article>
+          <p class="json-brace">&nbsp;&nbsp;},</p>
+        </div>
 
-        <article class="project-card">
-          <div class="project-image project-image--3"></div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">FastAPI</span>
-              <span class="project-tag">React</span>
-            </div>
-            <h3 class="project-title">Insight — Analytics Dashboard</h3>
-            <p class="project-desc">
-              Real-time analytics dashboard with customizable widgets, CSV export,
-              and AI-powered trend detection using Python ML models.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link">Live Demo →</a>
-              <a href="#" class="project-link project-link--secondary">GitHub</a>
-            </div>
+        <div class="project-card">
+          <p class="json-brace">&nbsp;&nbsp;{</p>
+          <div class="project-body">
+            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"Insight"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Real-time analytics dashboard with AI-powered trend detection"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"Python"</span><span class="t-comma">,</span> <span class="t-str">"FastAPI"</span><span class="t-comma">,</span> <span class="t-str">"React"</span>]<span class="t-comma">,</span></p>
+            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
           </div>
-        </article>
+          <p class="json-brace">&nbsp;&nbsp;},</p>
+        </div>
 
-        <article class="project-card">
-          <div class="project-image project-image--4"></div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag">Vue.js</span>
-              <span class="project-tag">Firebase</span>
-              <span class="project-tag">WebSockets</span>
-            </div>
-            <h3 class="project-title">ChatSpace — Real-Time Messaging</h3>
-            <p class="project-desc">
-              Slack-inspired messaging app with channels, threads, file sharing,
-              and end-to-end encryption. Built for 10,000+ concurrent users.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-link">Live Demo →</a>
-              <a href="#" class="project-link project-link--secondary">GitHub</a>
-            </div>
+        <div class="project-card">
+          <p class="json-brace">&nbsp;&nbsp;{</p>
+          <div class="project-body">
+            <p><span class="t-key">"name"</span><span class="t-eq">:</span> <span class="t-str">"ChatSpace"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"desc"</span><span class="t-eq">:</span> <span class="t-str">"Slack-style messaging with E2E encryption, built for 10k+ concurrent users"</span><span class="t-comma">,</span></p>
+            <p><span class="t-key">"stack"</span><span class="t-eq">:</span> [<span class="t-str">"Vue.js"</span><span class="t-comma">,</span> <span class="t-str">"Firebase"</span><span class="t-comma">,</span> <span class="t-str">"WebSockets"</span>]<span class="t-comma">,</span></p>
+            <p class="project-links-row"><span class="t-key">"links"</span><span class="t-eq">:</span> <a href="#" class="t-link">{"live": "→ demo"}</a> <a href="#" class="t-link t-link-dim">{"src": "github"}</a></p>
           </div>
-        </article>
+          <p class="json-brace">&nbsp;&nbsp;}</p>
+        </div>
 
+        <p class="json-bracket">]</p>
       </div>
     </div>
   </section>
 
   <!-- Blog -->
-  <section class="section section-alt" id="blog">
+  <section class="section" id="blog">
     <div class="container">
-      <div class="section-label">Writing</div>
-      <h2 class="section-title">Latest Articles</h2>
-      <div class="blog-grid">
-
-        <article class="blog-card">
-          <div class="blog-date">Feb 20, 2026</div>
-          <h3 class="blog-title">
-            <a href="#">Why I Switched from REST to GraphQL (and Back)</a>
-          </h3>
-          <p class="blog-excerpt">
-            A practical look at the trade-offs between REST and GraphQL after
-            running both in production for two years.
-          </p>
-          <div class="blog-footer">
-            <span class="blog-tag">Architecture</span>
-            <a href="#" class="blog-read-more">Read more →</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-date">Jan 15, 2026</div>
-          <h3 class="blog-title">
-            <a href="#">The Art of the Code Review: What 500+ Reviews Taught Me</a>
-          </h3>
-          <p class="blog-excerpt">
-            Hard-won lessons from reviewing thousands of lines of code — what
-            makes a review genuinely useful vs. just noise.
-          </p>
-          <div class="blog-footer">
-            <span class="blog-tag">Engineering Culture</span>
-            <a href="#" class="blog-read-more">Read more →</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-date">Dec 3, 2025</div>
-          <h3 class="blog-title">
-            <a href="#">Building a Design System from Scratch in 30 Days</a>
-          </h3>
-          <p class="blog-excerpt">
-            A step-by-step diary of building a component library and design
-            system for a Series A startup with a team of two.
-          </p>
-          <div class="blog-footer">
-            <span class="blog-tag">Design Systems</span>
-            <a href="#" class="blog-read-more">Read more →</a>
-          </div>
-        </article>
-
+      <div class="sec-cmd">
+        <span class="t-prompt">alex@portfolio:~$</span>
+        <span class="t-cmd"> git log --oneline --decorate blog/</span>
       </div>
-      <div class="section-cta">
-        <a href="#" class="btn btn-outline">View All Articles</a>
+      <div class="git-log">
+        <div class="git-entry">
+          <div class="git-top">
+            <span class="git-hash">a3f8c21</span>
+            <span class="git-ref t-blue">(HEAD -&gt; main)</span>
+            <span class="git-subject">Why I Switched from REST to GraphQL (and Back)</span>
+          </div>
+          <div class="git-meta">
+            <span class="git-date t-muted">2026-02-20</span>
+            <span class="git-tag t-yellow">Architecture</span>
+            <a href="#" class="t-link">read →</a>
+          </div>
+          <p class="git-body t-muted">A practical look at the trade-offs between REST and GraphQL after running both in production for two years.</p>
+        </div>
+        <div class="git-entry">
+          <div class="git-top">
+            <span class="git-hash">b7d1e09</span>
+            <span class="git-ref t-green">(origin/main)</span>
+            <span class="git-subject">The Art of the Code Review: What 500+ Reviews Taught Me</span>
+          </div>
+          <div class="git-meta">
+            <span class="git-date t-muted">2026-01-15</span>
+            <span class="git-tag t-yellow">Engineering Culture</span>
+            <a href="#" class="t-link">read →</a>
+          </div>
+          <p class="git-body t-muted">Hard-won lessons from reviewing thousands of lines — what makes a review genuinely useful vs. just noise.</p>
+        </div>
+        <div class="git-entry">
+          <div class="git-top">
+            <span class="git-hash">c2a4f77</span>
+            <span class="git-subject">Building a Design System from Scratch in 30 Days</span>
+          </div>
+          <div class="git-meta">
+            <span class="git-date t-muted">2025-12-03</span>
+            <span class="git-tag t-yellow">Design Systems</span>
+            <a href="#" class="t-link">read →</a>
+          </div>
+          <p class="git-body t-muted">A step-by-step diary of building a component library for a Series A startup with a team of two.</p>
+        </div>
+      </div>
+      <div class="sec-cmd" style="margin-top:2rem">
+        <span class="t-prompt">alex@portfolio:~$</span>
+        <span class="t-cmd"> <a href="#" class="t-link"># view all articles →</a></span>
       </div>
     </div>
   </section>
@@ -358,57 +359,66 @@
   <!-- Contact -->
   <section class="section" id="contact">
     <div class="container">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">Let's Work Together</h2>
-      <p class="contact-intro">
-        I'm currently open to freelance projects and full-time opportunities.
-        Whether you have a project in mind or just want to say hello, my inbox
-        is always open.
-      </p>
+      <div class="sec-cmd">
+        <span class="t-prompt">alex@portfolio:~$</span>
+        <span class="t-cmd"> ./contact.sh --interactive</span>
+      </div>
       <div class="contact-layout">
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+        <form class="contact-form term-window" id="contact-form" novalidate>
+          <div class="term-chrome">
+            <div class="win-dots">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+            </div>
+            <span class="term-title">contact.sh — interactive mode</span>
+          </div>
+          <div class="term-body form-body">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name"><span class="t-prompt-sm">$</span> name=</label>
+                <input type="text" id="name" name="name" placeholder='"Jane Smith"' required />
+              </div>
+              <div class="form-group">
+                <label for="email"><span class="t-prompt-sm">$</span> email=</label>
+                <input type="email" id="email" name="email" placeholder='"jane@example.com"' required />
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+              <label for="subject"><span class="t-prompt-sm">$</span> subject=</label>
+              <input type="text" id="subject" name="subject" placeholder='"Project Inquiry"' />
             </div>
+            <div class="form-group">
+              <label for="message"><span class="t-prompt-sm">$</span> message=</label>
+              <textarea id="message" name="message" rows="5" placeholder='"Tell me about your project..."' required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">$ send --message ↵</button>
+            <p class="form-status" id="form-status"></p>
           </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-          <p class="form-status" id="form-status"></p>
         </form>
+
         <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-icon">✉</span>
-            <div>
-              <p class="contact-label">Email</p>
-              <a href="mailto:alex@example.com">alex@example.com</a>
-            </div>
+          <p class="t-comment"># Direct contact info</p>
+          <div class="cinfo-row">
+            <span class="t-key">email</span><span class="t-eq">     = </span><a href="mailto:alex@example.com" class="t-str t-link">"alex@example.com"</a>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">📍</span>
-            <div>
-              <p class="contact-label">Location</p>
-              <p>San Francisco, CA</p>
-            </div>
+          <div class="cinfo-row">
+            <span class="t-key">location</span><span class="t-eq">  = </span><span class="t-str">"San Francisco, CA"</span>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">⏱</span>
-            <div>
-              <p class="contact-label">Response Time</p>
-              <p>Usually within 24 hours</p>
-            </div>
+          <div class="cinfo-row">
+            <span class="t-key">response</span><span class="t-eq">  = </span><span class="t-str">"&lt; 24 hours"</span>
+          </div>
+          <div class="cinfo-row">
+            <span class="t-key">open_to</span><span class="t-eq">   = </span><span class="t-green">"freelance | full-time"</span>
+          </div>
+          <div class="cinfo-row" style="margin-top:1.5rem">
+            <span class="t-comment"># Social</span>
+          </div>
+          <div class="cinfo-row">
+            <span class="t-key">github</span><span class="t-eq">    = </span><a href="#" class="t-blue t-link">"@alexmorgan"</a>
+          </div>
+          <div class="cinfo-row">
+            <span class="t-key">linkedin</span><span class="t-eq">  = </span><a href="#" class="t-blue t-link">"in/alexmorgan"</a>
           </div>
         </div>
       </div>
@@ -418,12 +428,12 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-copy">© 2026 Alex Morgan. Built with care.</p>
+      <p class="footer-copy"><span class="t-comment"># </span>© 2026 Alex Morgan. Built with ♥ &amp; caffeine.</p>
       <div class="footer-links">
-        <a href="#hero">Top</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#hero">~ home</a>
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
       </div>
     </div>
   </footer>
