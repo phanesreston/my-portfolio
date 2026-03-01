@@ -16,8 +16,8 @@
   --accent-fg: #0f0f11;
 
   /* Typography */
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-display: 'DM Sans', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
 
   /* Layout */
@@ -70,9 +70,10 @@ img { display: block; max-width: 100%; }
 .section-heading {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text);
-  line-height: 1.08;
+  line-height: 1.1;
+  letter-spacing: -.02em;
   margin-bottom: 1.25rem;
 }
 
@@ -306,10 +307,10 @@ img { display: block; max-width: 100%; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(4.5rem, 13vw, 10rem);
-  line-height: .92;
-  letter-spacing: -.04em;
+  line-height: .95;
+  letter-spacing: -.03em;
   color: var(--text);
   margin-bottom: 2rem;
 }
