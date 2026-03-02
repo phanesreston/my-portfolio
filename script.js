@@ -59,6 +59,16 @@ const fadeObs = new IntersectionObserver(entries => {
 fadeEls.forEach(el => fadeObs.observe(el));
 
 /* ============================================================
+   Section scroll-next buttons
+   ============================================================ */
+document.querySelectorAll('.scroll-next').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.next);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+/* ============================================================
    Contact form
    ============================================================ */
 const form       = document.getElementById('contact-form');

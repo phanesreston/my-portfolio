@@ -53,7 +53,14 @@ img { display: block; max-width: 100%; }
   padding: 0 2rem;
 }
 
-.section     { padding: 7rem 0; }
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: calc(var(--nav-h) + 4rem) 0 6rem;
+}
 .section-alt { background: var(--surface); }
 
 .section-header { margin-bottom: 3.5rem; }
@@ -331,31 +338,34 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap;
 }
 
-.hero-scroll {
+.scroll-next {
   position: absolute;
-  bottom: 2.5rem;
-  left: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .5rem;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
   color: var(--text-3);
-  font-family: var(--font-mono);
-  font-size: .6875rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition), color var(--transition);
+  animation: bob 2.4s ease-in-out infinite;
+  z-index: 10;
 }
-.scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-  animation: grow 1.8s ease-in-out infinite;
+.scroll-next:hover {
+  border-color: var(--text-2);
+  color: var(--text);
+  animation: none;
+  transform: translateX(-50%) translateY(3px);
 }
-@keyframes grow {
-  0%   { transform: scaleY(0); transform-origin: top; }
-  49%  { transform: scaleY(1); transform-origin: top; }
-  50%  { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
 }
 
 /* ============================================================
@@ -787,5 +797,4 @@ img { display: block; max-width: 100%; }
   .hamburger     { display: flex; }
   .form-row      { grid-template-columns: 1fr; }
   .about-stats   { grid-template-columns: 1fr 1fr; }
-  .hero-scroll   { display: none; }
 }
