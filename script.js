@@ -68,6 +68,13 @@ document.querySelectorAll('.scroll-next').forEach(btn => {
   });
 });
 
+document.querySelectorAll('.scroll-prev').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.prev);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
 /* ============================================================
    Contact form
    ============================================================ */
